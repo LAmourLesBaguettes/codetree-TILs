@@ -1,22 +1,22 @@
-class Day:
-    def __init__(self, a,b,c):
-        self.a = a
-        self.b = b
-        self.c = c
-
+class WeatherData:
+    def __init__(self, date, day, weather):
+        self.date = date
+        self.day = day
+        self.weather = weather
 
 def main():
     n = int(input())
-    day_list = []
+    data_list = []
 
+    # n개의 날씨 정보 입력받기
     for _ in range(n):
-        a, b, c = input().split()
-        day_list.append(Day(a,b,c))
+        date, day, weather = input().split()
+        data_list.append(WeatherData(date, day, weather))
 
-    
-    for day in day_list:
-        if day.c == "Rain":
-            print(f"{day.a} {day.b} {day.c}")
+    # 비가 오는 날 찾기
+    for data in data_list:
+        if data.weather == "Rain":
+            print(f"{data.date} {data.day} {data.weather}")
             break
 
 if __name__ == "__main__":
