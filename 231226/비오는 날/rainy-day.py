@@ -18,5 +18,6 @@ def main():
         if day.c == "Rain":
             print(f"{day.a} {day.b} {day.c}")
             break
+
 if __name__ == "__main__":
     main()
