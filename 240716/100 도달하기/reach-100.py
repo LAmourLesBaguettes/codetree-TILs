@@ -2,7 +2,7 @@ def generate_sequence(n):
     sequence = [1, n]
     while True:
         next_value = sequence[-1] + sequence[-2]
-        if next_value > 100:
+        if next_value > 200:
             break
         sequence.append(next_value)
     return sequence
