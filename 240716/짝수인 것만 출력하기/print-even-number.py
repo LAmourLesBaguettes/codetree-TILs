@@ -7,4 +7,4 @@ for element in elements:
     if element % 2 == 0:
         event_numbers.append(element)
 
-print(" ".join(map(str, event_number)))
+print(" ".join(map(str, event_numbers)))
