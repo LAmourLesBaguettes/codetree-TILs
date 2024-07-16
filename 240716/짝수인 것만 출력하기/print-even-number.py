@@ -1,5 +1,5 @@
 n = int(input())
-element = list(map(int, input().split()))
+elements = list(map(int, input().split()))
 
 event_numbers = []
 
