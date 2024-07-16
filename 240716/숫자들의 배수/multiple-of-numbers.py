@@ -6,8 +6,8 @@ def print_multiples(n):
 
     while count_five_multiples < 2:
         value = n * multiple
-        result.apppend(value)
-        if value % 5 === 0:
+        result.append(value)
+        if value % 5 == 0:
             count_five_multiples += 1
         multiple += 1
 
