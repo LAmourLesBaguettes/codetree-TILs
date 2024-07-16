@@ -1,5 +1,5 @@
 # Reading input
-input_str = input("입력: ")
+input_str = input()
 b, a = map(int, input_str.split())
 
 # Ensure b is greater than a
