@@ -1,17 +1,15 @@
-def generate_sequence(n):
-    sequence = [1, n]  # 첫 번째 항은 1, 두 번째 항은 n으로 초기화
-    while True:
-        next_value = sequence[-1] + sequence[-2]  # 다음 항은 전전항과 전항의 합
-        if next_value > 100:  # 다음 값이 100을 넘으면 종료
-            break
-        sequence.append(next_value)  # 리스트에 다음 값을 추가
-    return sequence
+# 입력받은 정수를 배열의 두번째 인덱스에 저장
+n = int(input())
+arr = [1, n]
+cnt = 1
 
-# 입력 받기
-n = int(input().strip())
+# 배열을 전전항과 전항을 더한 수로 채워나가고, 그 값이 100을 초과하면 while문을 탈출
+while True:
+	cnt += 1
+	arr.append(arr[cnt - 1] + arr[cnt - 2])
+	if arr[cnt] > 100:
+		break
 
-# 시퀀스 생성
-output_sequence = generate_sequence(n)
-
-# 결과 출력
-print(" ".join(map(str, output_sequence)))
+# 100을 딱 초과한 항까지 배열의 인덱스에 저장된 값을 출력
+for elem in arr:
+	print(elem, end=" ")
