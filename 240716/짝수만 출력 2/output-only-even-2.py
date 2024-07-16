@@ -17,4 +17,4 @@ while current >= a:
     current -= 1
 
 # Printing the result
-print("", " ".join(map(str, even_numbers)))
+print(" ".join(map(str, even_numbers)))
