@@ -1,4 +1,4 @@
-n = int(input().sprit())
+n = int(input().strip())
 
 students = []
 
