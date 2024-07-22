@@ -1,6 +1,6 @@
 N = int(input())
 
-numbers = map(int(input().split()))
+numbers = map(int,input().split())
 
 count_dict = {}
 
