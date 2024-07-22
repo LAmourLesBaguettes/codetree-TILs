@@ -2,7 +2,7 @@ n = int(input().sprit())
 
 students = []
 
-for _in range(n):
+for _ in range(n):
     name, korean, english, math = input().strip().split()
     korean = int(korean)
     english = int(english)
