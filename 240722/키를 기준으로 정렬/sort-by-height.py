@@ -2,7 +2,7 @@ n = int(input().strip())
 
 people = []
 
-for - in range(n):
+for _ in range(n):
     name, height, weight = input().strip().split()
     height = int(height)
     weight = int(weight)
