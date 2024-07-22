@@ -7,7 +7,7 @@ for _ in range(n):
     korean = int(korean)
     english = int(english)
     math = int(math)
-    students.sppend((name, korean, english, math))
+    students.append((name, korean, english, math))
 
 students.sort(key=lambda x:(-x[1], -x[2], -x[3]))
 
