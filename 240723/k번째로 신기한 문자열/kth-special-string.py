@@ -3,7 +3,7 @@ n = int(n)
 k = int(k)
 
 words = []
-for _ in range():
+for _ in range(n):
     word = input().strip()
     words.append(word)
 
