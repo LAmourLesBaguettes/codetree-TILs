@@ -2,7 +2,7 @@ n = int(input())
 
 words = []
 
-for _ i in range(n):
+for _ in range(n):
     word = input()
     words.append(word)
 
