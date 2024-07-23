@@ -1,7 +1,8 @@
 n = int(input())
-arr = list(map(int, input().split()))
+elements= list(map(int, input().split()))
 
-arr.sort()
-print(arr)
-arr.sort(reverse=True)
-print(arr)
+asc_sorted = sorted(elements)
+print(" ".join(map(str, asc_sorted)))
+
+desc_sorted = sorted(elements, reverse = True)
+print(" ".join(map(str, desc_sorted)))
