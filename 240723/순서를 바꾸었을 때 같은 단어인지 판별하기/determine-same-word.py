@@ -1,4 +1,4 @@
-from collection import Counter
+from collections import Counter
 
 word1 = input().strip()
 word2 = input().strip()
