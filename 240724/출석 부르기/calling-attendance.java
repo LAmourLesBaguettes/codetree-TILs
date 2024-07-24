@@ -8,7 +8,7 @@ public class Main {
         if(number >= 1 && number <= students.length){
             System.out.println(students[number-1]);
         } else {
-            System.out.println("Vacancy")
+            System.out.println("Vacancy");
         }
     }
 }
