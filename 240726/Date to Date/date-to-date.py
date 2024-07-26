@@ -9,6 +9,6 @@ if m1 == m2:
 else:
     for month in range(m1 + 1, m2):
         day_count += days_in_month[month]
-        day_count += d2
+    day_count += d2
 
 print(day_count)
