@@ -2,7 +2,7 @@
 days_in_month = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 # 요일 리스트 (인덱스 0은 일요일, 1은 월요일, ..., 6은 토요일)
-week_days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+week_days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 # 입력 받기
 m1, d1, m2, d2 = map(int, input().split())
