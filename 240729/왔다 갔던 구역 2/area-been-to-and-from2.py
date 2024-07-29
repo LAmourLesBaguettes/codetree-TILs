@@ -2,9 +2,6 @@ def calculate_overlapped_distance(commands):
     position = 0
     visit_count = {}
     
-    # Initialize the visit_count dictionary with the starting point
-    visit_count[position] = 1
-    
     # Process each command
     for command in commands:
         distance, direction = command.split()
@@ -12,20 +9,20 @@ def calculate_overlapped_distance(commands):
         
         if direction == "R":
             for _ in range(distance):
-                position += 1
                 if position in visit_count:
                     visit_count[position] += 1
                 else:
                     visit_count[position] = 1
+                position += 1
         elif direction == "L":
             for _ in range(distance):
-                position -= 1
                 if position in visit_count:
                     visit_count[position] += 1
                 else:
                     visit_count[position] = 1
+                position -= 1
     
-    # Calculate the overlapped distance
+    # Count the length of the segments visited 2 or more times
     overlapped_distance = 0
     for count in visit_count.values():
         if count >= 2:
