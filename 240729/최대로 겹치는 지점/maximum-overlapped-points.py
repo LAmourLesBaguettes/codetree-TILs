@@ -6,7 +6,7 @@ events = []
 for _ in range(n):
     x1, x2 = map(int, input().split())
     events.append((x1, 1))  # 시작점: +1
-    events.append((x2, 1))  # 끝점: +1
+    events.append((x2, -1)) # 끝점: -1
 
 # 이벤트를 x좌표 순서로 정렬
 events.sort()
