@@ -1,43 +1,28 @@
+def calculate_total_area(n, rectangles):
+    # 격자의 크기는 -100부터 100까지이므로, 인덱스 접근을 용이하게 하기 위해 +100 해준다.
+    grid = [[0] * 201 for _ in range(201)]
+    
+    # 모든 직사각형에 대해 격자를 채우기
+    for x1, y1, x2, y2 in rectangles:
+        for x in range(x1 + 100, x2 + 100):
+            for y in range(y1 + 100, y2 + 100):
+                grid[x][y] = 1  # 이 격자가 사용되었음을 표시
+    
+    # 격자를 탐색하여 사용된 부분의 개수를 세기
+    total_area = 0
+    for row in grid:
+        total_area += sum(row)
+    
+    return total_area
+
+# 입력 받기
 n = int(input())
 rectangles = []
 
 for _ in range(n):
     x1, y1, x2, y2 = map(int, input().split())
-    rectangles.append((x1, y1, y2, 1))  # 시작점 (열기)
-    rectangles.append((x2, y1, y2, -1)) # 끝점 (닫기)
+    rectangles.append((x1, y1, x2, y2))
 
-# x 좌표에 따라 정렬하되, 같은 x에서는 닫는 쪽이 우선
-rectangles.sort()
-
-total_area = 0
-current_y_ranges = []
-previous_x = -float('inf')
-
-def calculate_y_coverage(y_ranges):
-    y_ranges.sort()
-    total_length = 0
-    current_start, current_end = -float('inf'), -float('inf')
-    
-    for start, end in y_ranges:
-        if start > current_end:
-            total_length += current_end - current_start
-            current_start, current_end = start, end
-        else:
-            current_end = max(current_end, end)
-    
-    total_length += current_end - current_start
-    return total_length
-
-for x, y1, y2, type in rectangles:
-    # 이전 x에서 지금 x까지의 너비에 대한 y 커버리지 계산
-    if current_y_ranges:
-        total_area += (x - previous_x) * calculate_y_coverage(current_y_ranges)
-    
-    if type == 1: # 열기
-        current_y_ranges.append((y1, y2))
-    else: # 닫기
-        current_y_ranges.remove((y1, y2))
-    
-    previous_x = x
-
+# 면적 계산 및 출력
+total_area = calculate_total_area(n, rectangles)
 print(total_area)
