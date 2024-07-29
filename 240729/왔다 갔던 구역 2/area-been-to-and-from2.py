@@ -27,13 +27,16 @@ def calculate_overlapped_distance(commands):
     
     # Calculate the overlapped distance
     overlapped_distance = 0
-    for pos, count in visit_count.items():
+    for count in visit_count.values():
         if count >= 2:
             overlapped_distance += 1
             
     return overlapped_distance
 
+# Input
+n = int(input().strip())
+commands = [input().strip() for _ in range(n)]
 
-
+# Output
 result = calculate_overlapped_distance(commands)
-print(result)  # Output: 6
+print(result)
