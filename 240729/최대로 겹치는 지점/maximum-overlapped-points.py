@@ -1,22 +1,17 @@
-# 입력 처리
+# 변수 선언 및 입력
 n = int(input())
-events = []
+segments = [
+    tuple(map(int, input().split()))
+    for _ in range(n)
+]
 
-# 각 선분의 시작과 끝을 이벤트로 추가
-for _ in range(n):
-    x1, x2 = map(int, input().split())
-    events.append((x1, 1))  # 시작점: +1
-    events.append((x2, -1)) # 끝점: -1
+blocks = [0] * (101)
 
-# 이벤트를 x좌표 순서로 정렬
-events.sort()
+# 블럭을 특정 구간에 쌓아줍니다.
+for a, b in segments:
+    for i in range(a, b + 1):
+        blocks[i] += 1
 
-# 스위핑하여 최대 겹치는 선분 수 계산
-current_overlap = 0
-max_overlap = 0
-
-for event in events:
-    current_overlap += event[1]
-    max_overlap = max(max_overlap, current_overlap)
-
-print(max_overlap)
+# 최댓값을 구합니다.
+max_num = max(blocks)
+print(max_num)
