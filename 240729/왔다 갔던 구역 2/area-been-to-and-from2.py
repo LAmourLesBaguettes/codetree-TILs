@@ -33,16 +33,7 @@ def calculate_overlapped_distance(commands):
             
     return overlapped_distance
 
-# Example usage:
-n = 6
-commands = [
-    "2 R",
-    "6 L",
-    "1 R",
-    "8 L",
-    "1 R",
-    "2 R"
-]
+
 
 result = calculate_overlapped_distance(commands)
 print(result)  # Output: 6
